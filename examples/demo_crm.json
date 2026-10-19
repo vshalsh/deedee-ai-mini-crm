@@ -1,0 +1,58 @@
+{
+  "workspace": {
+    "id": "demo-workspace",
+    "name": "DeeDee Learning Demo"
+  },
+  "companies": [
+    {
+      "id": "company-northstar",
+      "name": "Northstar Analytics",
+      "industry": "Business software",
+      "website": "https://example.com"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "contact-jordan-lee",
+      "name": "Jordan Lee",
+      "email": "jordan@example.com",
+      "title": "Operations Lead",
+      "company_id": "company-northstar",
+      "tags": [
+        "demo"
+      ]
+    }
+  ],
+  "deals": [
+    {
+      "id": "deal-workflow-review",
+      "title": "Workflow review pilot",
+      "company_id": "company-northstar",
+      "primary_contact_id": "contact-jordan-lee",
+      "amount": 12000,
+      "currency": "USD",
+      "stage": "qualified",
+      "expected_close_date": "2026-12-15"
+    }
+  ],
+  "activities": [
+    {
+      "id": "activity-discovery",
+      "type": "meeting",
+      "occurred_at": "2026-10-15T09:00:00Z",
+      "contact_id": "contact-jordan-lee",
+      "deal_id": "deal-workflow-review",
+      "note": "Jordan wants to reduce manual handoffs. They will share a sample workflow next week."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-send-workflow",
+      "title": "Send a sample workflow template",
+      "due_date": "2026-10-22",
+      "status": "open",
+      "contact_id": "contact-jordan-lee",
+      "deal_id": "deal-workflow-review"
+    }
+  ]
+}
