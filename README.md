@@ -84,7 +84,7 @@ See [Security and BYOK](docs/security-byok.md) before implementing an AI feature
 4. Add tests and update the relevant module guide.
 5. Keep the mock provider working so others can learn without an API key.
 
-The repository is currently a documentation blueprint. No API keys or real customer data belong in commits. The project license is not yet selected; choose one before redistributing or reusing code outside the permissions GitHub provides for viewing and forking.
+The repository is currently a documentation blueprint. No API keys or real customer data belong in commits. DeeDee is licensed under GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later); see [LICENSE](LICENSE). Any future commercial edition or alternative license will require separate terms and review.
 
 ## Contributing
 
