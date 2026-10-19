@@ -21,4 +21,4 @@ Thanks for helping make DeeDee a practical CRM and AI-safety learning project.
 
 ## License
 
-The repository owner has not selected a project license yet. Please do not assume a license that is not present.
+DeeDee is licensed under AGPL-3.0-or-later; see [LICENSE](LICENSE). Contributions are published under this license. The project has not adopted a contributor license agreement or copyright assignment. Future commercial dual licensing of external contributions would require additional contributor permissions.
