@@ -1,5 +1,14 @@
 # DeeDee module guide
 
+## Implemented foundation
+
+Company/contact domain models, SQLite migration and repositories, versioned CRUD
+API with search/pagination, selected-record context preview, and mock summaries
+are now runnable. See [foundation lesson](foundation.md) for exact behavior.
+Other modules described below remain planned. The current package uses
+`src/deedee/` with separate domain, persistence, schema, service, and API modules;
+the broader source layout is a future extension.
+
 This document defines module boundaries so contributors can build DeeDee one piece at a time. Each module should have a small public interface and tests. Avoid importing database or model-provider details into CRM domain logic.
 
 ## 1. CRM domain

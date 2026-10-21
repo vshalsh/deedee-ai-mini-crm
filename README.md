@@ -2,7 +2,37 @@
 
 DeeDee is a **modular, forkable learning project** for building a small CRM with careful, user-controlled AI features and Bring Your Own Key (BYOK) support.
 
-> **Project status:** documentation and architecture blueprint. The application modules below are the development plan; they are not implemented yet.
+> **Project status:** runnable foundation. FastAPI + SQLite, company/contact CRUD,
+> search and pagination, versioned schema migration, and a deterministic local
+> mock summary are implemented. Deals, tasks, activities, frontend UI, and
+> external BYOK adapters remain planned.
+
+## Run locally
+
+Requires Python 3.10+.
+
+```sh
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -e ".[test]"
+uvicorn deedee.api:create_app --factory --host 127.0.0.1 --port 8000
+```
+
+On Windows PowerShell activate with `.venv\Scripts\Activate.ps1`.
+Open http://127.0.0.1:8000/docs for the interactive API.
+SQLite is initialized automatically at `data/deedee.db`; override with
+`DEEDEE_DB_PATH`. Use a file-backed database path, not `:memory:`.
+This foundation is a local, single-user learning API without authentication.
+
+```sh
+python -m unittest discover -s tests -v
+python examples/foundation_demo.py
+```
+
+The demo uses temporary SQLite storage and fictional records, creates a company
+and linked contact, previews selected context, and generates a mock suggestion.
+The mock is deterministic text formatting, not an LLM. No API key is required.
+See [foundation lesson and API guide](docs/foundation.md).
 
 ## What you will learn
 
@@ -15,7 +45,7 @@ DeeDee is a **modular, forkable learning project** for building a small CRM with
 
 ## Product scope
 
-The first usable version is a single-user, local-first CRM that can:
+The planned full version is a single-user, local-first CRM that can:
 
 - Store contacts and companies.
 - Track deals in a simple sales pipeline.
@@ -84,7 +114,7 @@ See [Security and BYOK](docs/security-byok.md) before implementing an AI feature
 4. Add tests and update the relevant module guide.
 5. Keep the mock provider working so others can learn without an API key.
 
-The repository is currently a documentation blueprint. No API keys or real customer data belong in commits. DeeDee is licensed under GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later); see [LICENSE](LICENSE). Any future commercial edition or alternative license will require separate terms and review.
+The repository now includes the runnable foundation described above. No API keys or real customer data belong in commits. DeeDee is licensed under GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later); see [LICENSE](LICENSE). Any future commercial edition or alternative license will require separate terms and review.
 
 ## Contributing
 
@@ -92,4 +122,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). Please use fictional records in examples
 
 ## License
 
-Not selected yet.
+GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later). See [LICENSE](LICENSE).

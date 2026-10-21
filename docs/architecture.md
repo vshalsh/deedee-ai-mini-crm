@@ -1,5 +1,14 @@
 # DeeDee architecture
 
+## Implemented foundation
+
+Company/contact domain models, SQLite migration and repositories, versioned CRUD
+API with search/pagination, selected-record context preview, and mock summaries
+are now runnable. See [foundation lesson](foundation.md) for exact behavior.
+Other modules described below remain planned. The current package uses
+`src/deedee/` with separate domain, persistence, schema, service, and API modules;
+the broader source layout is a future extension.
+
 ## Goal
 
 DeeDee is a small, local-first CRM that makes AI assistance useful without giving an AI unrestricted access to the workspace. The first version is a single-user learning app with a Python API and SQLite. Keep module boundaries ready for future multi-user work without implementing SaaS infrastructure in the first milestone.

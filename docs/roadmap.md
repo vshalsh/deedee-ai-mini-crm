@@ -1,5 +1,14 @@
 # DeeDee roadmap
 
+## Implemented foundation
+
+Company/contact domain models, SQLite migration and repositories, versioned CRUD
+API with search/pagination, selected-record context preview, and mock summaries
+are now runnable. See [foundation lesson](foundation.md) for exact behavior.
+Other modules described below remain planned. The current package uses
+`src/deedee/` with separate domain, persistence, schema, service, and API modules;
+the broader source layout is a future extension.
+
 A practical, learning-first build sequence. Complete one milestone with tests and documentation before starting the next.
 
 | Milestone | Deliverable | Exit check |

@@ -1,5 +1,14 @@
 # Security and BYOK
 
+## Current implementation
+
+The foundation implements the local mock only. No provider key entry, storage,
+external provider calls, or credential configuration is implemented.
+Context and summary routes require explicit IDs; summary requires a confirmation
+flag. Responses identify the mock model and return suggestions without writes.
+The API has no authentication and is intended for loopback local use.
+The remaining BYOK and hosted controls below describe future requirements.
+
 DeeDee is an educational project. Treat CRM records and provider keys as sensitive, even when using fictional demo data.
 
 ## Default: local mock mode
