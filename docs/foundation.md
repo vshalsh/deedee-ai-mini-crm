@@ -92,8 +92,9 @@ Run `python examples/foundation_demo.py` to exercise the complete foundation.
 Verified on 21 October 2026 with Python 3.12: editable installation succeeded,
 all 10 foundation tests passed, and the in-process API demo exited successfully.
 
-Authentication, tenant membership, dashboard UI, deals, activities, tasks, saved
-suggestion review, audit history, import/export, and external BYOK are not built
-in this slice. Bind the server to loopback for local use. Before shared hosting,
+This chapter describes the earlier foundation slice. Version 0.2.0 adds the
+dashboard UI, deals, activities, tasks, deal-stage history, and JSON export.
+Authentication, tenant membership, saved suggestion review, general audit history,
+CSV import/restore, and external BYOK remain future work. See the [working CRM guide](working-crm.md). Bind the server to loopback for local use. Before shared hosting,
 add authentication, authorization, deployment controls, and a reviewed secret
 lifecycle. No provider credentials are accepted or stored by this implementation.

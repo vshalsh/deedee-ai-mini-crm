@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeeDee · Your customer workspace</title>
+  <link rel="stylesheet" href="/static/app.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/">d<span>ee</span>d<span>ee</span><small>YOUR CUSTOMER WORKSPACE</small></a>
+    <nav id="nav" aria-label="Main navigation"></nav>
+    <div class="workspace"><span class="dot"></span> Local workspace<small>Your data stays on this device.<br>AI provider: local mock</small></div>
+  </aside>
+  <main>
+    <header><div><div class="eyebrow">DEEDEE CRM</div><h1 id="page-title">Overview</h1><p id="page-subtitle">A clear view of your relationships and next steps.</p></div><div class="header-actions"><button id="refresh" class="secondary">Refresh</button><button id="add" class="primary">+ Add contact</button></div></header>
+    <div id="notice" role="status" aria-live="polite" hidden></div>
+    <section id="content" aria-label="CRM workspace"><p>Loading your workspace…</p></section>
+    <footer>DeeDee Community · Local single-user edition · <a href="/docs">API reference</a> · <button id="backup" class="link">Download JSON backup</button></footer>
+  </main>
+  <dialog id="editor"><form id="record-form"><div class="dialog-head"><h2 id="editor-title">New record</h2><button type="button" class="icon" id="close-editor" aria-label="Close editor">×</button></div><div id="fields" class="fields"></div><p id="form-error" role="alert"></p><div class="dialog-actions"><button type="button" id="cancel-editor" class="secondary">Cancel</button><button id="save" type="submit" class="primary">Save record</button></div></form></dialog>
+  <dialog id="detail"><div class="dialog-head"><h2 id="detail-title">Record</h2><button type="button" class="icon" id="close-detail" aria-label="Close details">×</button></div><div id="detail-body"></div></dialog>
+</body></html>

@@ -129,7 +129,7 @@ class FoundationTests(unittest.TestCase):
         SQLiteRepository(self.db).initialize()
         SQLiteRepository(self.db).initialize()
         with sqlite3.connect(self.db) as db:
-            self.assertEqual(db.execute('SELECT COUNT(*) FROM schema_migrations').fetchone()[0], 1)
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM schema_migrations').fetchone()[0], 2)
         self.assertEqual(self.client.get('/health').json(), {'status':'ok','provider':'mock'})
 
     def test_domain_validation_without_http(self):

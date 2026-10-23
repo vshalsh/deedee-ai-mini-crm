@@ -1,13 +1,13 @@
 # DeeDee module guide
 
-## Implemented foundation
+## Current implementation — 0.2.0
 
-Company/contact domain models, SQLite migration and repositories, versioned CRUD
-API with search/pagination, selected-record context preview, and mock summaries
-are now runnable. See [foundation lesson](foundation.md) for exact behavior.
-Other modules described below remain planned. The current package uses
-`src/deedee/` with separate domain, persistence, schema, service, and API modules;
-the broader source layout is a future extension.
+The local CRM now includes browser screens for contacts, companies, deals,
+follow-up tasks, activities, and mock summaries. Deal stage history, dashboard
+totals, relationship constraints, and JSON backup export are implemented.
+External BYOK, authentication, saved suggestion review, and CSV import/restore
+remain future work. See [working CRM guide](working-crm.md) for current behavior.
+The remaining sections describe the full module design and future extensions.
 
 This document defines module boundaries so contributors can build DeeDee one piece at a time. Each module should have a small public interface and tests. Avoid importing database or model-provider details into CRM domain logic.
 

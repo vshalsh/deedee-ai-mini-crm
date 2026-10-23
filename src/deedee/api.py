@@ -1,9 +1,13 @@
 """Local single-user API. Start with: uvicorn deedee.api:create_app --factory."""
 from contextlib import asynccontextmanager
 import os
+from pathlib import Path
 from fastapi import FastAPI, Query, Request, Response
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from .work_api import workflow_router
 from .domain import Conflict, NotFound
 from .persistence import SQLiteRepository
 from .schemas import (CompanyInput, CompanyOutput, CompanyPage, ContactInput, ContactOutput,
@@ -19,10 +23,17 @@ def create_app(db_path: str | None = None):
         repository.initialize()
         yield
 
-    app = FastAPI(title="DeeDee CRM", version="0.1.0", lifespan=lifespan,
+    app = FastAPI(title="DeeDee CRM", version="0.2.0", lifespan=lifespan,
                   description="Local learning API. No authentication; bind to loopback only.")
     crm = CRMService(repository)
     ai = AIService(repository, MockProvider())
+    app.include_router(workflow_router(repository))
+    static = Path(__file__).parent / 'static'
+    app.mount('/static', StaticFiles(directory=static), name='static')
+
+    @app.get('/', include_in_schema=False)
+    def home():
+        return FileResponse(static / 'index.html')
 
     @app.exception_handler(NotFound)
     async def not_found(request, exc):
